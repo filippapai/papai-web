@@ -76,10 +76,33 @@
         form button:hover {
             background-color: #005599;
         }
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .language-switcher img {
+            width: 30px;
+            height: 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function changeLanguage(lang) {
+            document.querySelectorAll('.lang').forEach(function(el) {
+                el.style.display = el.classList.contains(lang) ? 'block' : 'none';
+            });
+        }
+    </script>
 </head>
-<body>
+<body onload="changeLanguage('cs')">
     <header>
+        <div class="language-switcher">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/32px-Flag_of_the_Czech_Republic.svg.png" alt="Čeština" onclick="changeLanguage('cs')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/32px-Flag_of_Germany.svg.png" alt="Deutsch" onclick="changeLanguage('de')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/32px-Flag_of_the_United_States.svg.png" alt="English" onclick="changeLanguage('en')">
+        </div>
         <h1>IT servis Filip Papai</h1>
         <p>Opravy, instalace a odvirování počítačů ve Znojmě</p>
     </header>
@@ -90,50 +113,116 @@
         <a href="#kontakt">Kontakt</a>
     </nav>
     <section id="uvod">
-        <h2>Vítejte</h2>
-        <p>Poskytuji komplexní IT servis počítačů pro domácnosti i firmy. Mým cílem je rychle a efektivně vyřešit vaše problémy s technikou.</p>
+        <div class="lang cs">
+            <h2>Vítejte</h2>
+            <p>Poskytuji komplexní IT servis počítačů pro domácnosti i firmy. Mým cílem je rychle a efektivně vyřešit vaše problémy s technikou.</p>
+        </div>
+        <div class="lang de">
+            <h2>Willkommen</h2>
+            <p>Ich biete umfassenden IT-Service für Computer für Haushalte und Unternehmen an. Mein Ziel ist es, Ihre technischen Probleme schnell und effizient zu lösen.</p>
+        </div>
+        <div class="lang en">
+            <h2>Welcome</h2>
+            <p>I provide comprehensive IT services for computers for homes and businesses. My goal is to solve your technical issues quickly and efficiently.</p>
+        </div>
     </section>
     <section id="sluzby" class="services">
-        <h2>Služby</h2>
-        <ul>
-            <li>Opravy a údržba počítačů</li>
-            <li>Odvirování a zabezpečení</li>
-            <li>Instalace softwaru a hardwaru</li>
-            <li>Poradenství a konzultace</li>
-        </ul>
+        <div class="lang cs">
+            <h2>Služby</h2>
+            <ul>
+                <li>Opravy a údržba počítačů</li>
+                <li>Odvirování a zabezpečení</li>
+                <li>Instalace softwaru a hardwaru</li>
+                <li>Poradenství a konzultace</li>
+            </ul>
+        </div>
+        <div class="lang de">
+            <h2>Dienstleistungen</h2>
+            <ul>
+                <li>Reparaturen und Wartung von Computern</li>
+                <li>Virenentfernung und Sicherheit</li>
+                <li>Installation von Software und Hardware</li>
+                <li>Beratung und Konsultation</li>
+            </ul>
+        </div>
+        <div class="lang en">
+            <h2>Services</h2>
+            <ul>
+                <li>Computer repairs and maintenance</li>
+                <li>Virus removal and security</li>
+                <li>Software and hardware installation</li>
+                <li>Consulting and advice</li>
+            </ul>
+        </div>
     </section>
     <section id="cenik" class="pricing">
-        <h2>Ceník</h2>
-        <p>Orientační ceny:</p>
-        <ul>
-            <li>Diagnostika problému: 0 Kč</li>
-            <li>Odvirování: 344 Kč</li>
-            <li>Přepastování: 344 Kč</li>
-	    <li>Instalace systému: 796 Kč</li>
-            <li>Ostatní služby: dle domluvy</li>
-        </ul>
+        <div class="lang cs">
+            <h2>Ceník</h2>
+            <p>Orientační ceny:</p>
+            <ul>
+                <li>Diagnostika problému: 0 Kč</li>
+                <li>Odvirování: 344 Kč</li>
+                <li>Přepastování: 344 Kč</li>
+                <li>Instalace systému: 796 Kč</li>
+                <li>Ostatní služby: dle domluvy</li>
+            </ul>
+        </div>
+        <div class="lang de">
+            <h2>Preisliste</h2>
+            <p>Orientierungspreise:</p>
+            <ul>
+                <li>Problemdiagnose: 0 CZK</li>
+                <li>Virenentfernung: 344 CZK</li>
+                <li>Wärmeleitpaste-Austausch: 344 CZK</li>
+                <li>Systeminstallation: 796 CZK</li>
+                <li>Andere Dienstleistungen: nach Vereinbarung</li>
+            </ul>
+        </div>
+        <div class="lang en">
+            <h2>Pricing</h2>
+            <p>Indicative prices:</p>
+            <ul>
+                <li>Problem diagnosis: 0 CZK</li>
+                <li>Virus removal: 344 CZK</li>
+                <li>Thermal paste replacement: 344 CZK</li>
+                <li>System installation: 796 CZK</li>
+                <li>Other services: by agreement</li>
+            </ul>
+        </div>
     </section>
     <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Název firmy: <strong>Filip Papai</strong></p>
-        <p>Adresa: Palackého 69, Znojmo, 66902</p>
-        <p>IČO: 14236885</p>
-        <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
-        <p>Telefon: <a href="tel:+420602727446">+420 602 727 446</a></p>
-        <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">Zobrazit na Google Mapách</a></p>
-        <h3>Kontaktní formulář</h3>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Vaše jméno" required>
-            <input type="email" name="email" placeholder="Váš e-mail" required>
-            <input type="tel" name="phone" placeholder="Váš telefon">
-            <textarea name="message" rows="5" placeholder="Vaše zpráva" required></textarea>
-            <button type="submit">Odeslat</button>
-        </form>
+        <div class="lang cs">
+            <h2>Kontakt</h2>
+            <p>Název firmy: <strong>Filip Papai</strong></p>
+            <p>Adresa: Palackého 69, Znojmo, 66902</p>
+            <p>IČO: 14236885</p>
+            <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
+            <p>Telefon: <a href="tel:+420602727446">+420 602 727 446</a></p>
+            <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">Zobrazit na Google Mapách</a></p>
+        </div>
+        <div class="lang de">
+            <h2>Kontakt</h2>
+            <p>Firmenname: <strong>Filip Papai</strong></p>
+            <p>Adresse: Palackého 69, Znojmo, 66902</p>
+            <p>Identifikationsnummer: 14236885</p>
+            <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
+            <p>Telefon: <a href="tel:+420602727446">+420 602 727 446</a></p>
+            <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">Auf Google Maps anzeigen</a></p>
+        </div>
+        <div class="lang en">
+            <h2>Contact</h2>
+            <p>Company name: <strong>Filip Papai</strong></p>
+            <p>Address: Palackého 69, Znojmo, 66902</p>
+            <p>ID Number: 14236885</p>
+            <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
+            <p>Phone: <a href="tel:+420602727446">+420 602 727 446</a></p>
+            <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">View on Google Maps</a></p>
+        </div>
     </section>
     <footer>
         <p>&copy; 2024 Filip Papai | IT Servis Znojmo</p>
         <p>Název firmy: Filip Papai</p>
-	<p>Adresa: Palackého 69, Znojmo, 66902</p>
+        <p>Adresa: Palackého 69, Znojmo, 66902</p>
         <p>IČO: 14236885</p>
         <p>Datová schránka: 8bdd2gv</p>
         <p>Nejsem plátce DPH</p>
