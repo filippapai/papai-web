@@ -1,249 +1,73 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Servis Filip Papai</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(180deg, #e0f7fa, #80deea);
-            color: #333;
-        }
-        header {
-            background: linear-gradient(45deg, #0066cc, #00cc99);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #005599;
-            text-align: center;
-        }
-        nav a {
-            display: inline-block;
-            color: white;
-            text-align: center;
-            padding: 20px 30px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        nav a:hover {
-            background-color: #003366;
-        }
-        section {
-            padding: 20px;
-        }
-        .services, .pricing {
-            background-color: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 20px auto;
-        }
-        form input, form textarea, form button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        form button {
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        form button:hover {
-            background-color: #005599;
-        }
-        .language-switcher {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        .language-switcher img {
-            width: 30px;
-            height: 20px;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-    </style>
-    <script>
-        function changeLanguage(lang) {
-            document.querySelectorAll('.lang').forEach(function(el) {
-                el.style.display = el.classList.contains(lang) ? 'block' : 'none';
-            });
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IT Servis Filip Papai</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #e8f0ff; color: #222; }
+    header { background: linear-gradient(90deg, #003366, #0055aa); color: white; padding: 30px 20px; text-align: center; }
+    nav { background: #004080; text-align: center; }
+    nav a { color: white; padding: 15px 20px; display: inline-block; text-decoration: none; }
+    nav a:hover { background: #002b5c; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    h2 { color: #003366; }
+    .services ul, .pricing ul { list-style: none; padding-left: 0; }
+    .services li, .pricing li { padding: 8px 0; }
+    footer { background: #002b5c; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    form { background: white; padding: 20px; border-radius: 6px; box-shadow: 0 0 10px #ccc; max-width: 500px; margin: auto; }
+    form input, form textarea { width: 100%; padding: 10px; margin: 10px 0; }
+    form button { padding: 10px 20px; background: #0055aa; color: white; border: none; cursor: pointer; }
+    form button:hover { background: #003366; }
+  </style>
 </head>
-<body onload="changeLanguage('cs')">
-    <header>
-        <div class="language-switcher">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/32px-Flag_of_the_Czech_Republic.svg.png" alt="Čeština" onclick="changeLanguage('cs')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/32px-Flag_of_Germany.svg.png" alt="Deutsch" onclick="changeLanguage('de')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/32px-Flag_of_the_United_States.svg.png" alt="English" onclick="changeLanguage('en')">
-        </div>
-        <h1>IT servis Filip Papai</h1>
-        <p>Opravy, instalace a odvirování počítačů ve Znojmě</p>
-    </header>
-    <nav>
-        <div class="lang cs">
-            <a href="#uvod">Úvod</a>
-            <a href="#sluzby">Služby</a>
-            <a href="#cenik">Ceník</a>
-            <a href="#kontakt">Kontakt</a>
-        </div>
-        <div class="lang de">
-            <a href="#uvod">Startseite</a>
-            <a href="#sluzby">Dienstleistungen</a>
-            <a href="#cenik">Preisliste</a>
-            <a href="#kontakt">Kontakt</a>
-        </div>
-        <div class="lang en">
-            <a href="#uvod">Home</a>
-            <a href="#sluzby">Services</a>
-            <a href="#cenik">Pricing</a>
-            <a href="#kontakt">Contact</a>
-        </div>
-    </nav>
-    <section id="uvod">
-        <div class="lang cs">
-            <h2>Vítejte</h2>
-            <p>Poskytuji komplexní IT servis počítačů pro domácnosti i firmy. Mým cílem je rychle a efektivně vyřešit vaše problémy s technikou.</p>
-        </div>
-        <div class="lang de">
-            <h2>Willkommen</h2>
-            <p>Ich biete umfassenden IT-Service für Computer für Haushalte und Unternehmen an. Mein Ziel ist es, Ihre technischen Probleme schnell und effizient zu lösen.</p>
-        </div>
-        <div class="lang en">
-            <h2>Welcome</h2>
-            <p>I provide comprehensive IT services for computers for homes and businesses. My goal is to solve your technical issues quickly and efficiently.</p>
-        </div>
-    </section>
-    <section id="sluzby" class="services">
-        <div class="lang cs">
-            <h2>Služby</h2>
-            <ul>
-                <li>Opravy a údržba počítačů</li>
-                <li>Odvirování a zabezpečení</li>
-                <li>Instalace softwaru a hardwaru</li>
-                <li>Poradenství a konzultace</li>
-            </ul>
-        </div>
-        <div class="lang de">
-            <h2>Dienstleistungen</h2>
-            <ul>
-                <li>Reparaturen und Wartung von Computern</li>
-                <li>Virenentfernung und Sicherheit</li>
-                <li>Installation von Software und Hardware</li>
-                <li>Beratung und Konsultation</li>
-            </ul>
-        </div>
-        <div class="lang en">
-            <h2>Services</h2>
-            <ul>
-                <li>Computer repairs and maintenance</li>
-                <li>Virus removal and security</li>
-                <li>Software and hardware installation</li>
-                <li>Consulting and advice</li>
-            </ul>
-        </div>
-    </section>
-    <section id="cenik" class="pricing">
-        <div class="lang cs">
-            <h2>Ceník</h2>
-            <p>Orientační ceny:</p>
-            <ul>
-                <li>Diagnostika problému: 0 Kč</li>
-                <li>Odvirování: 500 Kč</li>
-                <li>Přepastování: 400 Kč</li>
-                <li>Instalace systému: 800 Kč</li>
-                <li>Instalace včetně přepastování: 1000 Kč</li>
-                <li>Ostatní služby: dle domluvy</li>
-            </ul>
-        </div>
-        <div class="lang de">
-            <h2>Preisliste</h2>
-            <p>Orientierungspreise:</p>
-            <ul>
-                <li>Problemdiagnose: 0 EUR</li>
-                <li>Virenentfernung: 21 EUR</li>
-                <li>Wärmeleitpaste-Austausch: 17 EUR</li>
-                <li>Systeminstallation: 34 EUR</li>
-                <li>Installation inklusive Wärmeleitpaste-Austausch: 42 EUR</li>
-                <li>Andere Dienstleistungen: nach Vereinbarung</li>
-            </ul>
-        </div>
-        <div class="lang en">
-            <h2>Pricing</h2>
-            <p>Indicative prices:</p>
-            <ul>
-                <li>Problem diagnosis: 0 CZK</li>
-                <li>Virus removal: 500 CZK</li>
-                <li>Thermal paste replacement: 400 CZK</li>
-                <li>System installation: 800 CZK</li>
-                <li>Installation including thermal paste replacement: 1000 CZK</li>
-                <li>Other services: by agreement</li>
-            </ul>
-        </div>
-    </section>
-    <section id="kontakt">
-        <div class="lang cs">
-            <h2>Kontakt</h2>
-            <p>Název firmy: <strong>Filip Papai</strong></p>
-            <p>Adresa: Palackého 69, Znojmo, 66902</p>
-            <p>IČO: 14236885</p>
-            <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
-            <p>Telefon: <a href="tel:+420602727446">+420 602 727 446</a></p>
-            <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">Zobrazit na Google Mapách</a></p>
-        </div>
-        <div class="lang de">
-            <h2>Kontakt</h2>
-            <p>Firmenname: <strong>Filip Papai</strong></p>
-            <p>Adresse: Palackého 69, Znojmo, 66902</p>
-            <p>Identifikationsnummer: 14236885</p>
-            <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
-            <p>Telefon: <a href="tel:+420602727446">+420 602 727 446</a></p>
-            <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">Auf Google Maps anzeigen</a></p>
-        </div>
-        <div class="lang en">
-            <h2>Contact</h2>
-            <p>Company name: <strong>Filip Papai</strong></p>
-            <p>Address: Palackého 69, Znojmo, 66902</p>
-            <p>ID Number: 14236885</p>
-            <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
-            <p>Phone: <a href="tel:+420602727446">+420 602 727 446</a></p>
-            <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">View on Google Maps</a></p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2024 Filip Papai | IT Servis Znojmo</p>
-        <p>Název firmy: Filip Papai</p>
-        <p>Adresa: Palackého 69, Znojmo, 66902</p>
-        <p>IČO: 14236885</p>
-        <p>Datová schránka: 8bdd2gv</p>
-        <p>Nejsem plátce DPH</p>
-        <p><a href="https://mapy.cz/zakladni?x=16.0488655&y=48.8552025&z=17&source=addr&id=8966269" target="_blank">Zobrazit na Mapy.cz</a></p>
-    </footer>
+<body>
+
+<header>
+  <h1>IT Servis Filip Papai</h1>
+  <p>Opravy, instalace a odvirování počítačů ve Znojmě</p>
+</header>
+
+<nav>
+  <a href="index.html">Hlavní stránka</a>
+  <a href="o-mne.html">O mně</a>
+  <a href="cenik.html">Ceník</a>
+<!-- <a href="galerie.html">Galerie</a> -->
+
+</nav>
+
+<section class="services">
+  <h2>Služby</h2>
+  <ul>
+    <li>Opravy a údržba počítačů</li>
+    <li>Odvirování a zabezpečení</li>
+    <li>Instalace softwaru a hardwaru</li>
+    <li>Poradenství a konzultace</li>
+  </ul>
+</section>
+
+<section class="contact">
+  <h2>Kontakt</h2>
+  <p><strong>Filip Papai</strong></p>
+  <p>Palackého 69, Znojmo, 66902</p>
+  <p>Email: <a href="mailto:filip@papai.cz">filip@papai.cz</a></p>
+  <p>Telefon: <a href="tel:+420602727446">+420 602 727 446</a></p>
+  <p><a href="https://www.google.com/maps?q=Palackého+69,+Znojmo,+66902" target="_blank">Zobrazit na mapě</a></p>
+</section>
+
+<section>
+  <h2>Napište mi</h2>
+  <form>
+    <input type="text" placeholder="Vaše jméno" required />
+    <input type="email" placeholder="Váš e-mail" required />
+    <textarea rows="5" placeholder="Zpráva..." required></textarea>
+    <button type="submit">Odeslat</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2024 Filip Papai | IT Servis Znojmo</p>
+</footer>
+
 </body>
 </html>

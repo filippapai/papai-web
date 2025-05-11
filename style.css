@@ -1,0 +1,113 @@
+/* Základní stylování */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f4f8ff;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: linear-gradient(90deg, #003366, #0055aa);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #004080;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #aad4ff;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #003366;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 8px 0;
+}
+
+footer {
+  background: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Formulář */
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ccc;
+  max-width: 500px;
+  margin: auto;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #0055aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #003366;
+}
+
+/* Galerie */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery-item {
+  max-width: 300px;
+  text-align: center;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
