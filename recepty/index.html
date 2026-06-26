@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recepty – papai.cz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #6e6257;
+      --accent: #a67c3c;
+      --paper: #f5f1e9;
+      --shadow: rgba(20,20,20,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Manrope', 'Segoe UI', Arial, sans-serif;
+      background:
+        radial-gradient(900px 300px at 10% 0%, #efe6d6 0%, transparent 60%),
+        radial-gradient(700px 260px at 90% 20%, #f0e5d7 0%, transparent 55%),
+        linear-gradient(180deg, #f8f4ee, #efe6d6);
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 32px 20px 60px;
+    }
+    .site-nav {
+      max-width: 860px;
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .site-nav a {
+      font-size: 0.82em;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .site-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .site-nav .sep { color: var(--muted); opacity: .4; font-size: .8em; }
+    a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { border-bottom-color: var(--accent); }
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(166,124,60,.5), transparent);
+      margin: 20px 0;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) { .card { padding: 28px 20px !important; } }
+  </style>
+  <style>
+    .page-header {
+      max-width: 860px;
+      margin: 0 auto 32px;
+    }
+    .page-eyebrow {
+      font-size: .8em;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2em, 4vw, 3em);
+      font-weight: 600;
+    }
+    .grid {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .recipe-card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(166,124,60,.2);
+      box-shadow: 0 8px 32px var(--shadow);
+      border-radius: 18px;
+      padding: 24px 22px 20px;
+      text-decoration: none;
+      color: var(--ink);
+      border-bottom: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform .2s ease, box-shadow .2s ease;
+      animation: rise 500ms ease-out;
+      position: relative;
+    }
+    .recipe-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(20,20,20,.12);
+    }
+    .card-cat {
+      font-size: .72em;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 3px 10px;
+      align-self: flex-start;
+    }
+    .recipe-card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.08em;
+      font-weight: 600;
+      line-height: 1.3;
+      flex: 1;
+    }
+    .arrow {
+      font-size: .9em;
+      color: var(--accent);
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="/">papai.cz</a>
+    <span class="sep">›</span>
+    <a href="index.html">Recepty</a>
+  </nav>
+  <header class="page-header">
+    <div class="page-eyebrow">Rodinné</div>
+    <h1>Recepty</h1>
+  </header>
+  <main class="grid">
+      <a class="recipe-card" href="biskupsky-chlebicek.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Biskupský chlebíček</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="vajceny-konak.html">
+        <span class="card-cat" style="color:#3c7a6b;background:rgba(60,122,107,.12)">🥂 Nápoje</span>
+        <h2>Vaječný koňak od Aničky</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="domaci-chleba.html">
+        <span class="card-cat" style="color:#7a6040;background:rgba(122,96,64,.12)">🍞 Chleba & pečivo</span>
+        <h2>Domácí chleba</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="kefirova-buchta.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Kefírová buchta s čokoládovou polevou</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="brankovsky-zeleniovy-salat.html">
+        <span class="card-cat" style="color:#5c7a52;background:rgba(92,122,82,.12)">🥗 Saláty</span>
+        <h2>Brankovský zeleninový salát</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="bramborovy-salat-alenka.html">
+        <span class="card-cat" style="color:#5c7a52;background:rgba(92,122,82,.12)">🥗 Saláty</span>
+        <h2>Bramborový salát od Alenky</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="kiwi-buchta.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Kiwi buchta</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="svickova.html">
+        <span class="card-cat" style="color:#6b5c8a;background:rgba(107,92,138,.12)">🍖 Hlavní jídla</span>
+        <h2>Svíčková</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="cukrarske-kolace.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Cukrářské koláče</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="svatebni-kolace.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Svatební koláče</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="babeta.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Babeta (citronový dort)</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="babovka-jaruska.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Bábovka od Jarušky</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="ananasovy-dezert.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Ananasový dezert</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="dynovy-sirup.html">
+        <span class="card-cat" style="color:#3c7a6b;background:rgba(60,122,107,.12)">🥂 Nápoje</span>
+        <h2>Dýňový sirup</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="bramborovy-salat-vanocni.html">
+        <span class="card-cat" style="color:#5c7a52;background:rgba(92,122,82,.12)">🥗 Saláty</span>
+        <h2>Bramborový salát vánoční</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="skoricova-buchta.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Skořicová buchta od Irenky</h2>
+        <span class="arrow">→</span>
+      </a>
+      <a class="recipe-card" href="rolada.html">
+        <span class="card-cat" style="color:#a67c3c;background:rgba(166,124,60,.12)">🎂 Moučníky</span>
+        <h2>Roláda za 8 minut</h2>
+        <span class="arrow">→</span>
+      </a>
+  </main>
+</body>
+</html>
